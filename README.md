@@ -60,7 +60,7 @@ Create table products (
 
 import mysql.connector
 
-#connect to the database:    
+#connect to the database:
 db = mysql.connector.connect(
   host="local",
   user="Chris",
@@ -68,17 +68,17 @@ db = mysql.connector.connect(
   database="inventory"）
 )
 
-#create a cursor object:    
-cursor = db.cursor()
+   #create a cursor object:    
+   cursor = db.cursor()
 
-#execute a query:    
-cursor.execute("SELECT * FROM products")
+   #execute a query:    
+   cursor.execute("SELECT * FROM products")
 
-#fetch all rows:    
-rows = cursor.fetchall()
+   #fetch all rows:    
+   rows = cursor.fetchall()
    
-#close the database connection:    
-db.close()
+   #close the database connection:    
+   db.close()
 
 
 
@@ -147,12 +147,11 @@ def add():
     #redirect to the index page:     
     return redirect('/')
 
-;
 
 @app.route('/delete/<int:id>', methods=['POST'])
 def delete(id):
     try:
-        # connect to
+        
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\
 
