@@ -47,6 +47,7 @@ We can also use “delete from” to replace the”update”  means delete xx fr
 
 ### In the terminal and MySQL:
 
+```
 Create table products (
     id int auto_ increment primary key, 
     name varchar(255) not null,
@@ -54,7 +55,7 @@ Create table products (
     price decimal(10, 2) not null,
     quantity int not null
 );
-
+```
 
 ### In python:
 
