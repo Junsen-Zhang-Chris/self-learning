@@ -58,7 +58,7 @@ Create table products (
 ```
 
 ### In python:
-
+```
 import mysql.connector
 
 #connect to the database:
@@ -81,10 +81,10 @@ rows = cursor.fetchall()
 #close the database connection:    
 db.close()
 
-
+```
 
 ### Using Flask:
-
+```
 #imports the Flask module and the render_template function from the Flask library, and the mysql.connector module:      
 from flask import Flask, render_template
 import mysql.connector
@@ -113,12 +113,12 @@ def index():
 
     #render the template with the product data:   
     return render_template('index.html', products=rows)
-
+```
 
 
 
 ### Methods of adding or deleting:
-
+```
 @app.route('/add', methods=['POST'])
 def add():
     
@@ -152,7 +152,7 @@ def add():
 @app.route('/delete/<int:id>', methods=['POST'])
 def delete(id):
     try:
-        
+ ```       
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\
 
