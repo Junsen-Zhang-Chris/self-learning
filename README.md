@@ -60,7 +60,7 @@ Create table products (
 
 import mysql.connector
 
-#connect to the database
+#connect to the database:    
 db = mysql.connector.connect(
   host="local",
   user="Chris",
@@ -68,30 +68,30 @@ db = mysql.connector.connect(
   database="inventory"）
 )
 
-#create a cursor object
+#create a cursor object:    
 cursor = db.cursor()
 
-#execute a query
+#execute a query:    
 cursor.execute("SELECT * FROM products")
 
-#fetch all rows
+#fetch all rows:    
 rows = cursor.fetchall()
-
-#close the database connection
+   
+#close the database connection:    
 db.close()
 
 
 
 ### Using Flask:
 
-#imports the Flask module and the render_template function from the Flask library, and the mysql.connector module. 
+#imports the Flask module and the render_template function from the Flask library, and the mysql.connector module:      
 from flask import Flask, render_template
 import mysql.connector
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def index():   
   db = mysql.connector.connect(
    host="local",
    user="Chris",
@@ -101,25 +101,25 @@ def index():
 
     cursor = db.cursor()
 
-    #execute a query to get all products
+    #execute a query to get all products:   
     cursor.execute("SELECT * FROM products")
 
-    #fetch all rows
+    #fetch all rows:    
     rows = cursor.fetchall()
 
     db.close()
 
-    #render the template with the product data
+    #render the template with the product data:   
     return render_template('index.html', products=rows)
 
 
 
 
-### Methods of adding or deleting
+### Methods of adding or deleting:
 
 @app.route('/add', methods=['POST'])
 def add():
-    #get form data
+    #get form data:
     name = request.form['name']
     description = request.form['description']
     price = request.form['price']
@@ -134,15 +134,15 @@ def add():
 
     cursor = db.cursor()
 
-    #execute a query to insert the new product
+    #execute a query to insert the new product:   
     cursor.execute("INSERT INTO products (name, description, price, quantity) VALUES (%s, %s, %s, %s)", (name, description, price, quantity))
 
-    #commit the transaction
+    #commit the transaction:   
     db.commit()
     
     db.close()
 
-    #redirect to the index page
+    #redirect to the index page:     
     return redirect('/')
 
 ;
