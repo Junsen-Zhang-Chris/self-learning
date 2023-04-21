@@ -92,6 +92,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():   
+  
   db = mysql.connector.connect(
    host="local",
    user="Chris",
@@ -119,6 +120,7 @@ def index():
 
 @app.route('/add', methods=['POST'])
 def add():
+    
     #get form data:
     name = request.form['name']
     description = request.form['description']
