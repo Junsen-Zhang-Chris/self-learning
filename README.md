@@ -155,6 +155,105 @@ def delete(id):
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\
 
+Firstly, i design an appropriate database schema to store and manage product data on the terminal:
+
+Create table products (
+    id int auto_ increment primary key, 
+    name varchar(255) not null,
+    description text,
+    price decimal(10, 2) not null,
+    quantity int not null
+);
+
+Secondly, to create my application, I choose Python as  programming language as it has a MySQL connector library that makes it easy to interact with a MySQL database. And then using the mysql-connector-python library to connect to my MySQL database and execute SQL queries:
+
+
+Import  mysql.connector
+
+db = mysql.connector.connect(
+  host="local",
+  user="Chris",
+  password="junsenzhang",
+  database="inventory"）
+
+cursor = db.cursor()
+
+cursor.execute("SELECT * FROM products")
+
+rows = cursor.fetchall()
+
+db.close()
+
+
+Then, i create the user interface, by using the Flask:
+
+
+from flask import Flask, render_template
+import mysql.connector
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    
+    db = mysql.connector.connect(
+      host="local",
+      user="Chris",
+      password="junsenzhang",
+      database="inventory"
+)
+
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM products")
+
+    rows = cursor.fetchall()
+
+    db.close()
+
+    return render_template('index.html', products=rows)
+
+
+
+
+What’s more, there are also some methods to handle user input and validate user input to prevent errors and security vulnerabilities:
+
+1. adding a new product:
+
+@app.route('/add', methods=['POST'])
+def add():
+   
+    name = request.form['name']
+    description = request.form['description']
+    price = request.form['price']
+    quantity = request.form['quantity']
+
+    db = mysql.connector.connect(
+      host="local",
+      user="Chris",
+      password="junsenzhang",
+      database="inventory"
+    )
+
+    cursor = db.cursor()
+
+    cursor.execute("INSERT INTO products (name, description, price, quantity) VALUES (%s, %s, %s, %s)", (name, description, price, quantity))
+
+    db.commit()
+
+    db.close()
+
+    return redirect('/')
+
+
+
+2. deleting a product:
+
+
+@app.route('/delete/<int:id>', methods=['POST'])
+def delete(id):
+    try:
+      
 
 
 
