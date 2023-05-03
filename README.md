@@ -350,7 +350,7 @@ What’s more, there are also some methods to handle user input and validate use
 
 @app.route('/delete/<int:id>', methods=['POST'])
 def delete(id):
-    try:
+    \\try:
       
 
 
