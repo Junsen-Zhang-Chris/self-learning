@@ -359,6 +359,64 @@ def delete(id):
 
 
 
+%=============================================================================
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Level C: Deeper Understanding}
+Level C focuses on showing that you have actually understood the tool or technology at a relatively advanced level. You will need to compare it to alternatives, identifying key strengths and weaknesses, and the areas where this tool is most effective.
+
+
+\subsection{Strengths}
+One of the key strengths of MySQL is its scalability.   It can handle large amounts of data and can efficiently manage high-traffic websites and applications.   MySQL also offers excellent performance, enabling fast data retrieval and processing.   It supports various operating systems and has extensive community support, providing a wealth of resources, documentation, and user forums.   Additionally, MySQL is open source, making it cost-effective and allowing for customization and integration with other tools and technologies.
+
+
+\subsection{Weaknesses}
+One of the key weaknesses of MySQL is its limited support for complex transactions. While it supports basic transactional features, it may not be suitable for applications that require advanced transaction management, such as multi-level transactions or distributed transactions. MySQL also lacks some advanced features found in other database systems, such as built-in support for full-text search or advanced analytical functions. In certain scenarios, MySQL's performance may degrade when dealing with extremely large datasets or complex queries.
+
+
+\subsection{Usefulness}
+One scenario where MySQL can be highly useful is in the management of a content management system (CMS) for a news website. MySQL can serve as the database backend to store and organize various types of data, including articles, authors, categories, and user information. With MySQL, you can efficiently store and retrieve large volumes of articles, perform complex queries to filter and sort content, and enable user authentication and authorization. The scalability and reliability of MySQL make it suitable for handling the continuous flow of news updates and user interactions in a high-traffic environment, ensuring smooth content management and delivery on the news website.
+
+
+\subsection{Key Question 1}
+What is a database key?\\
+
+A database key is a unique identifier or attribute that is used to uniquely identify records within a database table. It ensures the integrity and uniqueness of data by providing a way to identify and access individual records. A key can be a single column or a combination of multiple columns in a table. The primary key is the main key that uniquely identifies each record, while a foreign key establishes a relationship between tables. Keys enable efficient searching, indexing, and retrieval of data, and they play a crucial role in maintaining the integrity and consistency of the database.
+
+
+\subsection{Key Question 2}
+Why might a user prefer to control a MySQL interface using a CLI rather than a GUI? \\
+
+The reasons might be:
+
+(1) A CLI provides more flexibility and control over the commands and operations performed on the database. Users can directly type commands, scripts, and queries, allowing for precise control and customization.
+
+(2) A CLI is often faster and more efficient for experienced users who are comfortable with command-line operations. They can execute complex queries or perform repetitive tasks more quickly by using command shortcuts and scripting.
+
+(3) A CLI is typically lighter in terms of system resources compared to a GUI, making it suitable for remote or low-bandwidth environments. It can be accessed via SSH or other remote protocols, enabling efficient management of databases on remote servers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 %=============================================================================
 
